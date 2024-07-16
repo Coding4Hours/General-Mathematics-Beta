@@ -5,7 +5,7 @@ if (urlParams.get("url") != null) {
   makeloader()
   document.getElementsByTagName("input")[0].value = urlParams.get("url");
   window.navigator.serviceWorker.register('./sw.js', {
-    scope: __uv$config.prefix
+    scope: "/General-Mathematics-Beta"
   }).then(() => {
     let url = input.value.trim();
     if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
