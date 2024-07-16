@@ -39,10 +39,7 @@ jobs:
           npx update-browserslist-db@latest
       - name: Build website
         run: pm2 start npm -- start
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: build
+
     
   deploy:
     environment:
