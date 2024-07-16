@@ -33,10 +33,12 @@ jobs:
           node-version: 18
           cache: npm
       - name: Install dependencies
-        run: npm install
+        run: | 
+          npm install -g pm2
+          npm install
           npx update-browserslist-db@latest
       - name: Build website
-        run: npm start
+        run: pm2 start npm -- start
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
